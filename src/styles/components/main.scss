@@ -1,0 +1,40 @@
+.main {
+  background: #FDF3EE;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__title {
+
+    &--black {
+      color: var(--black);
+    }
+
+    &--gradient {
+      background: linear-gradient(180deg, var(--pink) 0%, var(--purple) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 42px;
+    min-width: fit-content;
+    padding: 0 16px;
+    gap: 8px;
+    color: var(--dark-blue);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    white-space: nowrap;
+    border-radius: 10px;
+    border: 1px solid var(--border-light-gray);
+    background: var(--bg-light-gray);
+  }
+}

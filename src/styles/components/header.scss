@@ -1,0 +1,36 @@
+.header {
+  background-color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+
+  &--scrolled {
+    box-shadow: gray;
+    background-color: rgba(white, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 0;
+    height: 100%;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &-icon {
+      width: 204px;
+      height: 24px;
+    }
+  }    
+}
