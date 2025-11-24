@@ -1,0 +1,11 @@
+.footer {
+  background-color: var(--deep-blue);
+
+  &__container {
+    color: var(--footer-gray);
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+}

@@ -1,0 +1,47 @@
+@use "tailwindcss";
+
+@use '../styles/fonts.scss';
+@use '../styles/buttons.scss';
+@use '../styles/variables.scss';
+
+@use '../styles/components/header.scss';
+@use '../styles/components/main.scss';
+@use '../styles/components/how-it-works.scss';
+@use '../styles/components/what-you-get.scss';
+@use '../styles/components/unique.scss';
+@use '../styles/components/reviews.scss';
+@use '../styles/components/trust.scss';
+@use '../styles/components/important.scss';
+@use '../styles/components/upper-footer.scss';
+@use '../styles/components/footer.scss';
+@use '../styles/components/gift.scss';
+
+@layer base {
+  * {
+    font-family: 'Fixel Text', -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    // &::-webkit-scrollbar-track {
+    //   background: linear-gradient(90deg, #C6D2FF 0%, #E9D4FF 50%, #FCCEE8 100%);
+    // }
+
+    // &::-webkit-scrollbar {
+    //     width: 1px;
+    //     background: linear-gradient(90deg, #C6D2FF 0%, #E9D4FF 50%, #FCCEE8 100%);
+    //   }
+
+    // &::-webkit-scrollbar-thumb {
+    //   background: linear-gradient(124deg, #615FFF -115.57%, #AD46FF 100%);
+    //   border: 1px solid transparent;
+    //   border-radius: 6px;
+    // }
+  }
+
+  body {
+    font-family: 'Fixel Text', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
