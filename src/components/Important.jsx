@@ -1,3 +1,6 @@
+import warningOrange from '../assets/images/icons/warning-orange.svg';
+import brainWhite from '../assets/images/icons/brain-white.svg';
+
 const Important = () => {
 
   return (
@@ -7,7 +10,7 @@ const Important = () => {
                       pt-25 pb-30 mx-auto
                       max-md:py-20">
         <div className="important__label text-center w-fit">
-          <img className="important__image w-4 h-4" src="./src/assets/images/icons/warning-orange.svg" alt="quote icon" />
+          <img className="important__image w-4 h-4" src={warningOrange} alt="quote icon" />
           <span className="important__label--text">
             Важливо знати
           </span>
@@ -15,7 +18,7 @@ const Important = () => {
         <div className="important__items">
           <div className="important-item">
             <div className="important-item__image-container">
-              <img className="important-item__image w-12 h-12" src="./src/assets/images/icons/brain-white.svg" alt="Brain icon" />
+              <img className="important-item__image w-12 h-12" src={brainWhite} alt="Brain icon" />
             </div>
             <h3 className="important-item__title">
               1 з 3 українців
@@ -26,7 +29,7 @@ const Important = () => {
           </div>
           <div className="important-item">
             <div className="important-item__image-container">
-              <img className="important-item__image w-12 h-12" src="./src/assets/images/icons/brain-white.svg" alt="Brain icon" />
+              <img className="important-item__image w-12 h-12" src={brainWhite} alt="Brain icon" />
             </div>
             <h3 className="important-item__title">
               47% населення
@@ -37,7 +40,7 @@ const Important = () => {
           </div>
           <div className="important-item">
             <div className="important-item__image-container">
-              <img className="important-item__image w-12 h-12" src="./src/assets/images/icons/brain-white.svg" alt="Brain icon" />
+              <img className="important-item__image w-12 h-12" src={brainWhite} alt="Brain icon" />
             </div>
             <h3 className="important-item__title">
               38% людей
