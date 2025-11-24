@@ -22,6 +22,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    // &::-webkit-scrollbar-track {
+    //   background: linear-gradient(90deg, #C6D2FF 0%, #E9D4FF 50%, #FCCEE8 100%);
+    // }
+
+    // &::-webkit-scrollbar {
+    //     width: 1px;
+    //     background: linear-gradient(90deg, #C6D2FF 0%, #E9D4FF 50%, #FCCEE8 100%);
+    //   }
+
+    // &::-webkit-scrollbar-thumb {
+    //   background: linear-gradient(124deg, #615FFF -115.57%, #AD46FF 100%);
+    //   border: 1px solid transparent;
+    //   border-radius: 6px;
+    // }
   }
 
   body {

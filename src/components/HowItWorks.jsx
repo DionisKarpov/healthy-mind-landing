@@ -1,7 +1,7 @@
 const HowItWorks = () => {
   return (
     <section className="how-it-works">
-      <div className="how-it-works__container flex flex-col">
+      <div className="how-it-works__container flex flex-col w-[1200px] max-lg:w-[calc(100vw-48px)]">
         <div className="flex flex-col items-center">
           <div className="how-it-works__label text-center w-fit">
             <span className="how-it-works__label--text">

@@ -1,25 +1,27 @@
 const Main = () => {
   return (
-    <section className="main">
+    <section className="main bg-[#FDF3EE]">
       <div className="main__container flex justify-between
                       pt-[140px] pb-[30px]
                       max-xl:px-6
-                      max-sm:pt-[40px] max-sm:pb-[62px]
-                      max-sm:flex-col-reverse max-sm:text-center
-                      max-sm:items-center">
-        <div className="flex flex-col overflow-visible">
+                      max-md:flex-col-reverse max-md:items-center max-md:pt-[60px]
+                      max-sm:text-center max-sm:pt-[40px] max-sm:pb-[62px]">
+        <div className="flex flex-col overflow-visible w-auto max-sm:w-full max-lg:w-[380px]">
           <div className="flex flex-col
-                          lg:w-[587px]
+                          w-[587px]
+                          max-lg:w-[380px]
                           max-md:w-full">
             <h1 className="main__title main__title--black mb-1 mt-6
                           text-[64px] leading-[80px] 
                           max-lg:text-[48px] max-lg:leading-[48px]
+                          max-md:text-center
                           max-sm:text-[24px] max-sm:leading-[30px]">
               8 хвилин чесності з собою.
               </h1>
             <h1 className="main__title main__title--gradient mb-[24px] 
                           text-[64px] leading-[80px] 
                           max-lg:text-[48px] max-lg:leading-[48px]
+                          max-md:text-center
                           max-sm:text-[24px] max-sm:leading-[30px]">
               Пауза яку ти заслужив.
             </h1>
@@ -48,8 +50,8 @@ const Main = () => {
         </div>
         <div className="overflow-hidden rounded-[50%]
                         min-w-[420px] min-h-[420px] w-[420px] h-[420px]
-                        max-lg:min-w-[360px] max-lg:min-h-[360px] max-lg:w-[360px] max-lg:h-[360px]
-                        max-md:min-w-[240px] max-md:min-h-[240px] max-md:w-[240px] max-md:h-[240px]
+                        max-lg:min-w-[360px] max-lg:min-h-[360px] max-lg:w-[320px] max-lg:h-[320px]
+                        max-md:min-w-[240px] max-md:min-h-[240px] max-md:w-[200px] max-md:h-[200px]
                         max-sm:min-w-[140px] max-sm:min-h-[140px] max-sm:w-[140px] max-sm:h-[140px]">
           <img className="h-full w-full" src="./src/assets/images/main-image.webp" alt="Main illustration" />
         </div>

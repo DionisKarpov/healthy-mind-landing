@@ -4,7 +4,6 @@
   &__container {
     position: relative;
     max-width: 780px;
-    margin: 60px auto 80px auto;
   }
 
   &__label {
@@ -26,18 +25,13 @@
   &__title {
     margin-top: 24px;
     color: var(--black);
-    font-size: 44px;
-    font-weight: 500;
-    line-height: 125%;
     letter-spacing: -0.88px;
   }
 
   &__description {
     text-align: center;
     color: var(--dark-blue);
-    font-size: 18px;
     font-weight: 400;
-    line-height: 28px;
     letter-spacing: -0.41px;
   }
 
@@ -47,7 +41,6 @@
     border: 1px solid #FFCCD3;
     background: linear-gradient(90deg, #FFF1F2 0%, #FDF2F8 100%);
     color: var(--dark-blue);
-    font-size: 16px;
     font-weight: 400;
     line-height: 150%;
     letter-spacing: -0.32px;
@@ -55,7 +48,6 @@
 
   &__logo-slider {
     position: relative;
-    height: 66px;
   }
 }
 
@@ -63,17 +55,14 @@
 .logo-slider {
   width: 100vw;
   overflow: hidden;
-  margin: 13px 0;
 
   &__track {
     display: flex;
     align-items: center;
-    gap: 40px;
     animation: scroll 50s linear infinite;
   }
 
   img {
-    height: 40px;
     width: auto;
     flex-shrink: 0;
   }

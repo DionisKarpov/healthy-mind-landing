@@ -1,7 +1,7 @@
 const WhatYouGet = () => {
   return (
     <section className="what-you-get">
-      <div className="what-you-get__container flex flex-col">
+      <div className="what-you-get__container flex flex-col w-[1280px] max-xl:w-[calc(100vw-48px)] max-xl:px-4">
         <div className="flex flex-col items-center">
           <h2 className="what-you-get__title mt-8
                          text-[48px] leading-[56px]
@@ -10,7 +10,10 @@ const WhatYouGet = () => {
             Що ти отримаєш
           </h2>
         </div>
-        <div className="what-you-get__cards flex justify-between mt-[60px] w-full gap-6">
+        <div className="what-you-get__cards mt-[60px] w-full gap-6
+                        grid grid-cols-4 
+                        max-xl:grid-cols-2 max-xl:w-fit
+                        max-sm:grid-cols-1">
           <div className="what-you-get__card card flex flex-col items-left">
             <div className="card__image-container card__image-container--first">
               <img className="card__image" src="./src/assets/images/icons/brain-white.svg" alt="how it works icon" />

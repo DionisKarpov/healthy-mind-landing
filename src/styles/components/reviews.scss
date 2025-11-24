@@ -1,9 +1,5 @@
 .reviews {
-  
-  &__container {
-    max-width: 1280px;
-    margin: 60px auto 80px auto;
-  }
+  overflow: hidden;
 
   &__label {
     display: flex;
@@ -20,12 +16,25 @@
       -webkit-text-fill-color: transparent;
     }
   }
+
+  &__cards {
+    overflow: scroll;
+    width: 100vw;
+    padding-left: calc(((100vw - 1200px) - 120px) / 2);
+    padding-right: calc(((100vw - 1200px) - 120px) / 2);
+
+    @media screen and (max-width: 1280px) and (min-width: 768px) {
+      align-self: flex-start;
+    }
+
+    @media screen and (max-width: 1280px) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
 }
 
 .review {
-  height: 438px;
-  max-width: 405px;
-  padding: 32px;
   border-radius: 14px;
   border: 2px solid #E0E7FF;
 

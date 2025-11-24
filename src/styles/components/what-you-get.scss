@@ -5,15 +5,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 1288px;
-    max-width: 1288px;
     margin: 0 auto;
-
-    @apply pt-[80px] pb-[80px];
-
-    @screen mobile {
-      
-    }
+    padding: 80px 0;
   }
 
   &__title {
