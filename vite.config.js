@@ -11,6 +11,9 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  build: {
+    outDir: 'docs'
+  },
   base: '/healthy-mind-landing/',
   css: {
     preprocessorOptions: {
