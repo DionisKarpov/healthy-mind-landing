@@ -1,3 +1,4 @@
+import miniArrow from '../assets/images/icons/mini-arrow.svg';
 
 const UpperFooter = () => {
 
@@ -14,7 +15,7 @@ const UpperFooter = () => {
         <button className="button button--gradient-vertical 
                            w-[262px] max-md:w-full mt-[48px]">
           Пройти чекап зараз
-          <img className="w-[16px] h-[16px]" src="./src/assets/images/icons/mini-arrow.svg" alt="Arrow icon" />
+          <img className="w-[16px] h-[16px]" src={miniArrow} alt="Arrow icon" />
         </button>
       </div>
     </footer>

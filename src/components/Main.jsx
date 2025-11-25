@@ -1,3 +1,9 @@
+import miniArrow from '../assets/images/icons/mini-arrow.svg';
+import mainImage from '../assets/images/main-image.webp';
+import analyticsDarkPurple from '../assets/images/icons/analytics-dark-purple.svg';
+import shieldGreen from '../assets/images/icons/shield-green.svg';
+import clockPurple from '../assets/images/icons/clock-purple.svg';
+
 const Main = () => {
   return (
     <section className="main bg-[#FDF3EE]">
@@ -30,20 +36,20 @@ const Main = () => {
             </p>
             <button className="button button--gradient-vertical w-[244px] max-md:w-full">
               Пройти чекап
-              <img className="w-[16px] h-[16px]" src="./src/assets/images/icons/mini-arrow.svg" alt="Arrow icon" />
+              <img className="w-[16px] h-[16px]" src={miniArrow} alt="Arrow icon" />
             </button>
           </div>
           <div className="flex gap-4 mt-[32px] max-md:flex-col">
             <div className="main__info max-md:w-full">
-              <img className="w-[20px] h-[20px]" src="./src/assets/images/icons/analytics-dark-purple.svg" alt="analytics icon" />
+              <img className="w-[20px] h-[20px]" src={analyticsDarkPurple} alt="analytics icon" />
               50+ показників
             </div>
             <div className="main__info max-md:w-full">
-              <img className="w-[20px] h-[20px]" src="./src/assets/images/icons/shield-green.svg" alt="analytics icon" />
+              <img className="w-[20px] h-[20px]" src={shieldGreen} alt="analytics icon" />
               Безпечно та конфіденційно
             </div>
             <div className="main__info max-md:w-full">
-              <img className="w-[20px] h-[20px]" src="./src/assets/images/icons/clock-purple.svg" alt="analytics icon" />
+              <img className="w-[20px] h-[20px]" src={clockPurple} alt="analytics icon" />
               8 хвилин
             </div>
           </div>
@@ -53,7 +59,7 @@ const Main = () => {
                         max-lg:min-w-[360px] max-lg:min-h-[360px] max-lg:w-[320px] max-lg:h-[320px]
                         max-md:min-w-[240px] max-md:min-h-[240px] max-md:w-[200px] max-md:h-[200px]
                         max-sm:min-w-[140px] max-sm:min-h-[140px] max-sm:w-[140px] max-sm:h-[140px]">
-          <img className="h-full w-full" src="./src/assets/images/main-image.webp" alt="Main illustration" />
+          <img className="h-full w-full" src={mainImage} alt="Main illustration" />
         </div>
       </div>
     </section>

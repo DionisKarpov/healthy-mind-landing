@@ -5,7 +5,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 120px auto 80px auto;
   }
 
   &__label {
@@ -23,18 +22,12 @@
 
   &__title {
     color: var(--black);
-    font-size: 44px;
     font-weight: 500;
     line-height: 125%;
-    letter-spacing: -0.88px;
   }
 
   &__description {
     color: var(--dark-blue);
-    text-align: center;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 150%;
     letter-spacing: -0.36px;
   }
 
@@ -48,28 +41,13 @@
     padding-left: calc(((100vw - 1200px) - 120px) / 2);
     padding-right: calc(((100vw - 1200px) - 120px) / 2);
 
-    &::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
-      background-color: transparent;
-    }
-
     &::-webkit-scrollbar {
-        width: 10px;
-        background-color: transparent;
-      }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: transparent;
-      border: 2px solid transparent;
+      display: none;
     }
   }
 }
 
 .unique-step {
-  height: 300px;
-  width: 520px;
-  min-width: 520px;
-  padding: 24px 40px;
   gap: 10px;
   border-radius: 24px;
   border: 2px solid #DCE3FF;
@@ -89,10 +67,6 @@
     .unique-step__image-container,
     .unique-step__decor {
       background: linear-gradient(135deg, #AD46FF 0%, #F6339A 100%);
-    }
-
-    .unique-step__decor {
-      margin-top: 24px;
     }
   }
 
@@ -121,7 +95,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 12px;
     width: 64px;
     min-width: 64px;
     height: 64px;
@@ -134,16 +107,12 @@
   }
 
   &__title {
-    font-size: 22px;
     font-weight: 600;
     line-height: 125%;
     letter-spacing: -0.66px;
   }
 
   &__description {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 26px;
     letter-spacing: -0.48px;
     color: var(--dark-blue);
   }
@@ -151,7 +120,6 @@
   &__decor {
     width: 100%;
     height: 4px;
-    margin-top: 32px;
     border-radius: 4px;
   }
 

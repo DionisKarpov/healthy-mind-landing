@@ -1,5 +1,6 @@
+import quoteGradient from '../assets/images/icons/quote-gradient.svg';
+
 const Reviews = () => {
-  // Відгуки в константі
   const reviewsData = [
     {
       id: 1,
@@ -32,7 +33,7 @@ const Reviews = () => {
         <div className="reviews__label text-center w-fit">
           <img 
             className="reviews__image w-4 h-4" 
-            src="./src/assets/images/icons/quote-gradient.svg" 
+            src={quoteGradient} 
             alt="quote icon" 
           />
           <span className="reviews__label--text">
