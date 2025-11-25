@@ -1,11 +1,19 @@
+import forbesLogo from '../assets/images/partners/forbes-logo.svg';
+import ainLogo from '../assets/images/partners/ain-logo.svg';
+import bazilikLogo from '../assets/images/partners/bazilik-logo.svg';
+import partnerLogo from '../assets/images/partners/partner-logo.svg';
+import spekaLogo from '../assets/images/partners/speka-logo.svg';
+import vectorLogo from '../assets/images/partners/vector-logo.svg';
+import heartRed from '../assets/images/icons/heart-red.svg';
+
 const Trust = () => {
   const logos = [
-    { id: 1, src: '/healthy-mind-landing/images/partners/forbes-logo.svg', alt: 'Forbes' },
-    { id: 2, src: '/healthy-mind-landing/images/partners/ain-logo.svg', alt: 'Ain' },
-    { id: 3, src: '/healthy-mind-landing/images/partners/bazilik-logo.svg', alt: 'Bazilik' },
-    { id: 4, src: '/healthy-mind-landing/images/partners/partner-logo.svg', alt: 'Partner' },
-    { id: 5, src: '/healthy-mind-landing/images/partners/speka-logo.svg', alt: 'Speka' },
-    { id: 6, src: '/healthy-mind-landing/images/partners/vector-logo.svg', alt: 'Vector' },
+    { id: 1, src: forbesLogo, alt: 'Forbes' },
+    { id: 2, src: ainLogo, alt: 'Ain' },
+    { id: 3, src: bazilikLogo, alt: 'Bazilik' },
+    { id: 4, src: partnerLogo, alt: 'Partner' },
+    { id: 5, src: spekaLogo, alt: 'Speka' },
+    { id: 6, src: vectorLogo, alt: 'Vector' },
   ];
   return (
     <section className="trust bg-[#FFF9F3]">
@@ -13,7 +21,7 @@ const Trust = () => {
                       mt-20 mb-30 mx-auto
                       max-md:my-15 max-md:px-5">
         <div className="trust__label text-center w-fit">
-          <img className="trust__image w-4 h-4" src="/healthy-mind-landing/images/icons/heart-red.svg" alt="quote icon" />
+          <img className="trust__image w-4 h-4" src={heartRed} alt="quote icon" />
           <span className="trust__label--text">
             Довіра
           </span>

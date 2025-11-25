@@ -1,3 +1,7 @@
+import dialogWhite from '../assets/images/icons/dialog-white.svg';
+import analyticsWhite from '../assets/images/icons/analytics-white.svg';
+import bulbWhite from '../assets/images/icons/bulb-white.svg';
+
 const HowItWorks = () => {
   return (
     <section className="how-it-works">
@@ -28,7 +32,7 @@ const HowItWorks = () => {
             <div className="how-it-works__step step flex flex-col items-left min-w-[270px]">
               <div className="step__image-container step__image-container--first w-[80px] h-[80px] max-md:w-[60px] max-md:h-[60px]">
                 <img className="step__image w-[40px] h-[40px] max-md:w-[30px] max-md:h-[30px]" 
-                     src="/healthy-mind-landing/images/icons/dialog-white.svg" alt="how it works icon" />
+                     src={dialogWhite} alt="how it works icon" />
               </div>
               <h3 className="step__title step__title--first w-[240px] mt-6 
                              text-[22px] font-semibold leading-[125%] letter-spacing-[-0.66px]
@@ -42,7 +46,7 @@ const HowItWorks = () => {
             <div className="how-it-works__step step flex flex-col items-left min-w-[270px]">
               <div className="step__image-container step__image-container--second w-[80px] h-[80px] max-md:w-[60px] max-md:h-[60px]">
                 <img className="step__image w-[40px] h-[40px] max-md:w-[30px] max-md:h-[30px]" 
-                src="/healthy-mind-landing/images/icons/analytics-white.svg" alt="how it works icon" />
+                src={analyticsWhite} alt="how it works icon" />
               </div>
               <h3 className="step__title step__title--second w-[240px] mt-6 
                              text-[22px] font-semibold leading-[125%] letter-spacing-[-0.66px]
@@ -56,7 +60,7 @@ const HowItWorks = () => {
             <div className="how-it-works__step step flex flex-col items-left min-w-[270px]">
               <div className="step__image-container step__image-container--third w-[80px] h-[80px] max-md:w-[60px] max-md:h-[60px]">
                 <img className="step__image w-[40px] h-[40px] max-md:w-[30px] max-md:h-[30px]" 
-                     src="/healthy-mind-landing/images/icons/bulb-white.svg" alt="how it works icon" />
+                     src={bulbWhite} alt="how it works icon" />
               </div>
               <h3 className="step__title step__title--third  w-[240px] mt-6 
                              text-[22px] font-semibold leading-[125%] letter-spacing-[-0.66px]

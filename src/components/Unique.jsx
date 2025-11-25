@@ -1,4 +1,9 @@
 import { useState, useRef } from 'react';
+import achiveWhite from '../assets/images/icons/achive-white.svg';
+import layersWhite from '../assets/images/icons/layers-white.svg';
+import lockWhite from '../assets/images/icons/lock-white.svg';
+import flashWhite from '../assets/images/icons/flash-white.svg';
+import userWhite from '../assets/images/icons/user-white.svg';
 
 const Unique = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -8,35 +13,36 @@ const Unique = () => {
     {
       id: 0,
       label: 'Головна перевага',
-      icon: '/healthy-mind-landing/images/icons/achive-white.svg',
+      icon: achiveWhite,
       title: 'Науково точно',
       description: 'Використовуємо всесвітньо визнані методики, адаптовані для українців.',
       className: 'unique-step--first'
     },
     {
       id: 1,
-      icon: '/healthy-mind-landing/images/icons/layers-white.svg',
+      icon: layersWhite,
       title: 'Система оцінює найпоширеніші психологічні стани:',
       description: 'тривогу, депресію, стрес, наслідки травми та інші (за міжнародними стандартами DSM-5 і МКХ-11)',
       className: 'unique-step--second'
     },
     {
       id: 2,
-      icon: '/healthy-mind-landing/images/icons/lock-white.svg',
+      icon: lockWhite,
       title: 'Конфіденційно',
       description: 'Результати бачите лише ви.',
       className: 'unique-step--third'
     },
     {
       id: 3,
-      icon: '/healthy-mind-landing/images/icons/flash-white.svg',
+      icon: flashWhite,
       title: 'Швидко',
       description: '8 хвилин замість 3-4 години класично зі спеціалістом.',
       className: 'unique-step--fourth'
     },
     {
       id: 4,
-      icon: '/healthy-mind-landing/images/icons/user-white.svg',
+      icon: userWhite,
+      
       title: 'Особисто',
       description: 'Рекомендації створені саме під ваш стан — без шаблонів.',
       className: 'unique-step--fifth'

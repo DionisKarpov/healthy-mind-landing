@@ -1,3 +1,8 @@
+import brainWhite from '../assets/images/icons/brain-white.svg';
+import bulbWhite from '../assets/images/icons/bulb-white.svg';
+import arrowGrowWhite from '../assets/images/icons/arrow-grow-white.svg';
+import arrow from '../assets/images/icons/arrow.svg';
+
 const WhatYouGet = () => {
   return (
     <section className="what-you-get">
@@ -19,7 +24,7 @@ const WhatYouGet = () => {
           <div className="what-you-get__cards mt-[60px] w-full gap-6 flex md:justify-center">
             <div className="what-you-get__card card flex flex-col items-left w-[332px] min-w-[332px] max-md:w-[310px] max-md:min-w-[310px]">
               <div className="card__image-container card__image-container--first">
-                <img className="card__image" src="/healthy-mind-landing/images/icons/brain-white.svg" alt="how it works icon" />
+                <img className="card__image" src={brainWhite} alt="how it works icon" />
               </div>
               <h3 className="card__title card__title--first">Чітку картину свого стану</h3>
               <p className="card__description">
@@ -29,7 +34,7 @@ const WhatYouGet = () => {
             </div>
             <div className="what-you-get__card card flex flex-col items-left w-[332px] min-w-[332px] max-md:w-[310px] max-md:min-w-[310px]">
               <div className="card__image-container card__image-container--second">
-                <img className="card__image" src="/healthy-mind-landing/images/icons/brain-white.svg" alt="how it works icon" />
+                <img className="card__image" src={brainWhite} alt="how it works icon" />
               </div>
               <h3 className="card__title card__title--second">Зрозумілі пояснення</h3>
               <p className="card__description">
@@ -39,7 +44,7 @@ const WhatYouGet = () => {
             </div>
             <div className="what-you-get__card card flex flex-col items-left w-[332px] min-w-[332px] max-md:w-[310px] max-md:min-w-[310px]">
               <div className="card__image-container card__image-container--third">
-                <img className="card__image" src="/healthy-mind-landing/images/icons/bulb-white.svg" alt="how it works icon" />
+                <img className="card__image" src={bulbWhite} alt="how it works icon" />
               </div>
               <h3 className="card__title card__title--third">Розуміння своїх ресурсів</h3>
               <p className="card__description">
@@ -49,7 +54,7 @@ const WhatYouGet = () => {
             </div>
             <div className="what-you-get__card card flex flex-col items-left w-[332px] min-w-[332px] max-md:w-[310px] max-md:min-w-[310px] mr-5">
               <div className="card__image-container card__image-container--fourth">
-                <img className="card__image" src="/healthy-mind-landing/images/icons/arrow-grow-white.svg" alt="how it works icon" />
+                <img className="card__image" src={arrowGrowWhite} alt="how it works icon" />
               </div>
               <h3 className="card__title card__title--fourth">Можливість відстеження змін з часом</h3>
               <p className="card__description">
@@ -68,7 +73,7 @@ const WhatYouGet = () => {
                            w-[280px] mt-[24px] 
                            max-md:w-[290px]">
           Пройти чекап
-          <img className="w-[16px] h-[16px]" src="/healthy-mind-landing/images/icons/arrow.svg" alt="Arrow icon" />
+          <img className="w-[16px] h-[16px]" src={arrow} alt="Arrow icon" />
         </button>
       </div>
     </section>
