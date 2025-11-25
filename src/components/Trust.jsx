@@ -1,19 +1,19 @@
 const Trust = () => {
   const logos = [
-    { id: 1, src: './src/assets/images/partners/forbes-logo.svg', alt: 'Forbes' },
-    { id: 2, src: './src/assets/images/partners/ain-logo.svg', alt: 'Ain' },
-    { id: 3, src: './src/assets/images/partners/bazilik-logo.svg', alt: 'Bazilik' },
-    { id: 4, src: './src/assets/images/partners/partner-logo.svg', alt: 'Partner' },
-    { id: 5, src: './src/assets/images/partners/speka-logo.svg', alt: 'Speka' },
-    { id: 6, src: './src/assets/images/partners/vector-logo.svg', alt: 'Vector' },
+    { id: 1, src: '/healthy-mind-landing/images/partners/forbes-logo.svg', alt: 'Forbes' },
+    { id: 2, src: '/healthy-mind-landing/images/partners/ain-logo.svg', alt: 'Ain' },
+    { id: 3, src: '/healthy-mind-landing/images/partners/bazilik-logo.svg', alt: 'Bazilik' },
+    { id: 4, src: '/healthy-mind-landing/images/partners/partner-logo.svg', alt: 'Partner' },
+    { id: 5, src: '/healthy-mind-landing/images/partners/speka-logo.svg', alt: 'Speka' },
+    { id: 6, src: '/healthy-mind-landing/images/partners/vector-logo.svg', alt: 'Vector' },
   ];
   return (
     <section className="trust bg-[#FFF9F3]">
       <div className="trust__container flex flex-col items-center 
                       mt-20 mb-30 mx-auto
-                      max-md:my-20 max-md:px-5">
+                      max-md:my-15 max-md:px-5">
         <div className="trust__label text-center w-fit">
-          <img className="trust__image w-4 h-4" src="./src/assets/images/icons/heart-red.svg" alt="quote icon" />
+          <img className="trust__image w-4 h-4" src="/healthy-mind-landing/images/icons/heart-red.svg" alt="quote icon" />
           <span className="trust__label--text">
             Довіра
           </span>

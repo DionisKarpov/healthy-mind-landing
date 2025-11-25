@@ -32,7 +32,7 @@ const Reviews = () => {
         <div className="reviews__label text-center w-fit">
           <img 
             className="reviews__image w-4 h-4" 
-            src="./src/assets/images/icons/quote-gradient.svg" 
+            src="/healthy-mind-landing/images/icons/quote-gradient.svg" 
             alt="quote icon" 
           />
           <span className="reviews__label--text">
@@ -50,7 +50,7 @@ const Reviews = () => {
               <div className="review__image-container mb-8 max-md:mb-4">
                 <img 
                   className="review__image" 
-                  src="./src/assets/images/icons/quote-purple.svg" 
+                  src="/healthy-mind-landing/images/icons/quote-purple.svg" 
                   alt="quote icon" 
                 />
               </div>

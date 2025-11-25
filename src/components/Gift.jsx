@@ -2,16 +2,16 @@ const Gift = () => {
   return (
     <section className="gift">
       <div className="gift__container flex flex-col w-[1000px] py-[120px] items-center
-                      max-lg:w-[calc(100vw-48px)] max-md:py-[80px]">
+                      max-lg:w-[calc(100vw-48px)] max-md:py-15">
         <img className="gift__image w-[310px] h-[310px] mb-[-38px]
                         max-md:mb-6 max-md:w-[240px] max-md:h-[240px]"
-              src="./src/assets/images/grand-dad.webp" />
+              src="/healthy-mind-landing/images/grand-dad.webp" />
         <div className="gift__boarded-section w-full border-2 border-solid p-[80px]
                         max-md:border-0 max-md:p-0">
           <div className="flex flex-col items-center">
             <div className="gift__label w-[320px] p-4
                             max-md:py-2 max-md:px-8 max-md:w-fit">
-              <img className="gift__image w-4 h-4" src="./src/assets/images/icons/heart-red.svg" alt="quote icon" />
+              <img className="gift__image w-4 h-4" src="/healthy-mind-landing/images/icons/heart-red.svg" alt="quote icon" />
               <span className="gift__label--text text-center">
                 Подаруй турботу
               </span>
@@ -25,9 +25,9 @@ const Gift = () => {
               Іноді цього достатньо, щоб зробити день легшим.
             </p>
             <button className="button button--gradient-red w-[334px] mt-12 max-md:w-full max-md:mt-10">
-              <img className="w-[16px] h-[16px]" src="./src/assets/images/icons/heart-white.svg" alt="Arrow icon" />
+              <img className="w-[16px] h-[16px]" src="/healthy-mind-landing/images/icons/heart-white.svg" alt="Arrow icon" />
               Подарувати чекап
-              <img className="w-[16px] h-[16px]" src="./src/assets/images/icons/arrow.svg" alt="Arrow icon" />
+              <img className="w-[16px] h-[16px]" src="/healthy-mind-landing/images/icons/arrow.svg" alt="Arrow icon" />
             </button>
           </div>
         </div>
