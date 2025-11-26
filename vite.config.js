@@ -6,39 +6,35 @@ import tailwindcss from '@tailwindcss/vite'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-export default defineConfig(({ command }) => {
-  const base = command === 'build' ? '/healthy-mind-landing/' : '/'
-  
-  return {
-    plugins: [
-      react(),
-      tailwindcss()
-    ],
-    build: {
-      outDir: 'docs'
-    },
-    base: base,
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler',
-          silenceDeprecations: ['legacy-js-api']
-        }
-      },
-      devSourcemap: true
-    },
-    
-    server: {
-      watch: {
-        usePolling: true,
-        interval: 100
-      },
-      hmr: {
-        overlay: true
+export default defineConfig({
+  plugins: [
+    react(),
+    tailwindcss()
+  ],
+  build: {
+    outDir: 'docs'
+  },
+  base: '/healthy-mind-landing/',
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+        silenceDeprecations: ['legacy-js-api']
       }
     },
-    optimizeDeps: {
-      exclude: ['@tailwindcss/vite']
+    devSourcemap: true
+  },
+  
+  server: {
+    watch: {
+      usePolling: true,
+      interval: 100
+    },
+    hmr: {
+      overlay: true
     }
+  },
+  optimizeDeps: {
+    exclude: ['@tailwindcss/vite']
   }
 })
