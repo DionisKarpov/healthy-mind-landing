@@ -25,27 +25,8 @@
 
     @media screen and (max-width: 768px) {
       &::-webkit-scrollbar {
-        height: 12px;
-      }
-
-      &::-webkit-scrollbar-track {
-        background: linear-gradient(#E0E7FF 0 0) center/8px 2px space no-repeat;
-        margin: 0px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: linear-gradient(90deg, #6366F1, #8B5CF6) padding-box;
-        border: 2px solid transparent;
-        border-radius: 10px;
-        
-        &:hover {
-          background: linear-gradient(90deg, #4F46E5, #7C3AED) padding-box;
-        }
-      }
-
-      &::-webkit-scrollbar:vertical {
         display: none;
-      } 
+      }
     }
   }
 

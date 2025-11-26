@@ -42,8 +42,8 @@ const Reviews = () => {
           </span>
         </div>
 
-        <div className="reviews__cards flex justify-between mt-[48px] gap-8
-                        max-md:flex-col max-md:gap-4 max-md:mt-0">
+        <div className="reviews__cards overflow-x-auto flex justify-between mt-[48px] gap-8
+                        max-md:flex-col max-md:gap-4 max-md:mt-0 ">
           {reviewsData.map((review) => (
             <div key={review.id} className="reviews__item review flex flex-col items-left 
                                             min-w-[405px] max-w-[405px] h-[438px] p-8

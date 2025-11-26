@@ -49,6 +49,33 @@ const Unique = () => {
     }
   ];
 
+  const handleScroll = () => {
+  if (stepsContainerRef.current) {
+    const container = stepsContainerRef.current;
+    const scrollLeft = container.scrollLeft;
+    const scrollWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
+    
+    if (scrollLeft + clientWidth >= scrollWidth - 10) {
+      if (activeStep !== stepsData.length - 1) {
+        setActiveStep(stepsData.length - 1);
+      }
+      return;
+    }
+    
+    const DESKTOP_ITEM_WIDTH = 520;
+    const DESKTOP_GAP = 32;
+    const itemWidth = DESKTOP_ITEM_WIDTH;
+    const gap = DESKTOP_GAP;
+    const currentIndex = Math.round(scrollLeft / (itemWidth + gap - 24));
+    const newActiveStep = Math.max(0, Math.min(currentIndex, stepsData.length - 1));
+    
+    if (newActiveStep !== activeStep) {
+      setActiveStep(newActiveStep);
+    }
+  }
+};
+
   const scrollToStep = (index) => {
     setActiveStep(index);
     
@@ -97,6 +124,7 @@ const Unique = () => {
         </div>
 
         <div ref={stepsContainerRef}
+             onScroll={handleScroll}
              className="unique__steps flex gap-8 mt-[48px] overflow-x-auto scroll-smooth
                      max-md:-mx-6 max-md:px-6">
           {stepsData.map((step, index) => (
@@ -112,7 +140,7 @@ const Unique = () => {
                   <img className="w-[16px] h-[16px]" src={step.icon} alt="icon" />
                   {step.label}
                 </div>
-              )}
+)}
               <div className="flex mt-auto gap-6 max-md:gap-4">
                 <div className="unique-step__image-container mt-[12px] max-md:mt-0">
                   <img className="unique-step__image" src={step.icon} alt="icon" />
@@ -132,15 +160,13 @@ const Unique = () => {
 
         <div className="flex justify-center gap-2 mt-8 max-md:gap-1 max-md:mt-6">
           {stepsData.map((step, index) => (
-            <button 
-              key={step.id} 
-              onClick={() => scrollToStep(index)}
-              className={`w-6 h-6 max-md:w-4 max-md:h-4 rounded-full transition-all border-2 ${
-                activeStep === index 
-                  ? 'bg-[#8753FF] border-[#8753FF]' 
-                  : 'bg-transparent border-[#EEDAFF]'
-              }`}
-            />
+            <button key={step.id} 
+                    onClick={() => scrollToStep(index)}
+                    className={`w-6 h-6 max-md:w-4 max-md:h-4 rounded-full transition-all border-2 ${
+                      activeStep === index 
+                        ? 'bg-[#8753FF] border-[#8753FF]' 
+                        : 'bg-transparent border-[#EEDAFF]'
+                    }`}/>
           ))}
         </div>
       </div>

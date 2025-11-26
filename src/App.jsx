@@ -21,7 +21,9 @@ function App() {
       <WhatYouGet />
       <Unique />
       <Trust />
-      <Gift />
+      {/* Temporary hided */}
+      {/* <Gift /> */}
+      {/* Temporary hided */}
       <Important />
       <Reviews />
       <UpperFooter />

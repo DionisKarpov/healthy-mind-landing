@@ -2,8 +2,12 @@ import brainWhite from '../assets/images/icons/brain-white.svg';
 import bulbWhite from '../assets/images/icons/bulb-white.svg';
 import arrowGrowWhite from '../assets/images/icons/arrow-grow-white.svg';
 import arrow from '../assets/images/icons/arrow.svg';
+import { useRef } from 'react';
+import CustomScrollbar from './СustomScrollbar.jsx';
 
 const WhatYouGet = () => {
+  const scrollRef = useRef(null);
+
   return (
     <section className="what-you-get">
       <div className="what-you-get__container flex flex-col py-[80px] 
@@ -20,7 +24,7 @@ const WhatYouGet = () => {
                         max-xl:-mx-[calc((100vw-100%)/2)]
                         max-xl:overflow-x-auto 
                         max-xl:pb-[52px]
-                        max-xl:px-5">
+                        max-xl:px-5 scroll-smooth" ref={scrollRef}>
           <div className="what-you-get__cards mt-[60px] w-full gap-6 flex md:justify-center">
             <div className="what-you-get__card card flex flex-col items-left w-[332px] min-w-[332px] max-md:w-[310px] max-md:min-w-[310px]">
               <div className="card__image-container card__image-container--first">
@@ -64,6 +68,7 @@ const WhatYouGet = () => {
             </div>
           </div>
         </div>
+        <CustomScrollbar scrollRef={scrollRef} />
 
         <div className="what-you-get__description w-[520px] mt-[60px] max-md:w-full max-md:px-5">
           Healthy Mind аналізує понад 50 показників, щоб дати тобі не просто цифри — а відчуття стійкості
