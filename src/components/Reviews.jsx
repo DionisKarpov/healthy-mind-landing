@@ -1,4 +1,5 @@
 import quoteGradient from '../assets/images/icons/quote-gradient.svg';
+import quotePurple from '../assets/images/icons/quote-purple.svg';
 
 const Reviews = () => {
   const reviewsData = [
@@ -51,7 +52,7 @@ const Reviews = () => {
               <div className="review__image-container mb-8 max-md:mb-4">
                 <img 
                   className="review__image" 
-                  src="./src/assets/images/icons/quote-purple.svg" 
+                  src={quotePurple} 
                   alt="quote icon" 
                 />
               </div>

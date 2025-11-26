@@ -1,6 +1,7 @@
 import heartRed from '../assets/images/icons/heart-red.svg';
 import heartWhite from '../assets/images/icons/heart-white.svg';
 import arrowIcon from '../assets/images/icons/arrow.svg';
+import grandDadImage from '../assets/images/grand-dad.webp';
 
 const Gift = () => {
   return (
@@ -9,7 +10,7 @@ const Gift = () => {
                       max-lg:w-[calc(100vw-48px)] max-md:py-15">
         <img className="gift__image w-[310px] h-[310px] mb-[-38px]
                         max-md:mb-6 max-md:w-[240px] max-md:h-[240px]"
-              src="./src/assets/images/grand-dad.webp" />
+              src={grandDadImage} />
         <div className="gift__boarded-section w-full border-2 border-solid p-[80px]
                         max-md:border-0 max-md:p-0">
           <div className="flex flex-col items-center">
