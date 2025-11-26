@@ -14,7 +14,7 @@ export default defineConfig({
   build: {
     outDir: 'docs'
   },
-  base: './src/assets/',
+  base: '/healthy-mind-landing/',
   css: {
     preprocessorOptions: {
       scss: {
