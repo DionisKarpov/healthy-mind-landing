@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import warningOrange from '../assets/images/icons/warning-orange.svg';
 import brainWhite from '../assets/images/icons/brain-white.svg';
 import arrow from '../assets/images/icons/arrow.svg';
 
 const Important = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const items = [
     {
@@ -24,6 +26,34 @@ const Important = () => {
     }
   ];
 
+  // Touch handlers для свайпу
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const swipeThreshold = 50; // Мінімальна відстань свайпу
+    const diff = touchStartX.current - touchEndX.current;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Свайп вліво - наступна картка
+        if (activeSlide < items.length - 1) {
+          setActiveSlide(activeSlide + 1);
+        }
+      } else {
+        // Свайп вправо - попередня картка
+        if (activeSlide > 0) {
+          setActiveSlide(activeSlide - 1);
+        }
+      }
+    }
+  };
+
   return (
     <section className="important bg-[#F8FAFF]">
       <div className="important__container flex flex-col items-center 
@@ -37,9 +67,15 @@ const Important = () => {
           </span>
         </div>
 
-        <div className="important__items grid grid-cols-3 max-md:grid-cols-1 mt-10 mb-25 max-md:mb-8">
+        <div className="important__items grid grid-cols-3 max-md:grid-cols-1 mt-10 mb-25 max-md:mb-8"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}>
           {items.map((item, index) => (
-            <div key={item.id} className={`important-item flex max-md:w-[calc(100vw-40px)] ${index === activeSlide ? 'max-md:flex' : 'max-md:hidden'}`}>
+            <div key={item.id} 
+                  className={`important-item flex max-md:w-[calc(100vw-40px)] 
+                              transition-opacity duration-300
+                              ${index === activeSlide ? 'max-md:flex' : 'max-md:hidden'}`}>
               <div className="important-item__image-container">
                 <img className="important-item__image w-12 h-12" src={brainWhite} alt="Brain icon" />
               </div>
@@ -55,18 +91,17 @@ const Important = () => {
 
         <div className="hidden max-md:flex justify-center gap-2 mb-15">
           {items.map((item, index) => (
-            <button
-              key={item.id}
-              onClick={() => setActiveSlide(index)}
-              className={`h-4 w-4 rounded-full transition-all duration-300 cursor-pointer ${
-                activeSlide === index 
-                  ? 'bg-[#F9709A]' 
-                  : 'bg-[#FFE1D4]'
-              }`}
-              aria-label={`Перейти до слайду ${index + 1}`}
-            />
+            <button key={item.id}
+                    onClick={() => setActiveSlide(index)}
+                    className={`h-4 w-4 rounded-full transition-all duration-300 cursor-pointer ${
+                      activeSlide === index 
+                        ? 'bg-[#F9709A]' 
+                        : 'bg-[#FFE1D4]'
+                    }`}
+                    aria-label={`Перейти до слайду ${index + 1}`}/>
           ))}
         </div>
+        
         <div className="important__colored-section flex flex-col gap-6 w-full
                         p-[60px_120px_72px_150px] max-md:p-10 max-md:pb-30">
           <h2 className="important__title text-[40px] fw-500 leading-[130%] text-center
@@ -81,6 +116,7 @@ const Important = () => {
             внутрішнім світом.
           </p>
         </div>
+        
         <button className="button button--light-gradient-inclined 
                            w-[290px] max-md:w-[calc(100%-80px)] mt-[-28px]
                            max-md:mt-[-96px]">
