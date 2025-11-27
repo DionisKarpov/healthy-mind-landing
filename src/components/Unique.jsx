@@ -8,6 +8,8 @@ import userWhite from '../assets/images/icons/user-white.svg';
 const Unique = () => {
   const [activeStep, setActiveStep] = useState(0);
   const stepsContainerRef = useRef(null);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const stepsData = [
     {
@@ -42,39 +44,63 @@ const Unique = () => {
     {
       id: 4,
       icon: userWhite,
-      
       title: 'Особисто',
       description: 'Рекомендації створені саме під ваш стан — без шаблонів.',
       className: 'unique-step--fifth'
     }
   ];
 
-  const handleScroll = () => {
-  if (stepsContainerRef.current) {
-    const container = stepsContainerRef.current;
-    const scrollLeft = container.scrollLeft;
-    const scrollWidth = container.scrollWidth;
-    const clientWidth = container.clientWidth;
-    
-    if (scrollLeft + clientWidth >= scrollWidth - 10) {
-      if (activeStep !== stepsData.length - 1) {
-        setActiveStep(stepsData.length - 1);
+  // Touch handlers для свайпу на мобільному
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const isMobile = window.innerWidth < 768;
+    if (!isMobile) return;
+
+    const swipeThreshold = 50; // Мінімальна відстань свайпу в px
+    const diff = touchStartX.current - touchEndX.current;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Свайп вліво - наступна картка
+        if (activeStep < stepsData.length - 1) {
+          setActiveStep(activeStep + 1);
+        }
+      } else {
+        // Свайп вправо - попередня картка
+        if (activeStep > 0) {
+          setActiveStep(activeStep - 1);
+        }
       }
-      return;
     }
+  };
+
+  // Відслідковування скролу для десктопу
+  const handleScroll = () => {
+    if (!stepsContainerRef.current) return;
     
-    const DESKTOP_ITEM_WIDTH = 520;
-    const DESKTOP_GAP = 32;
-    const itemWidth = DESKTOP_ITEM_WIDTH;
-    const gap = DESKTOP_GAP;
-    const currentIndex = Math.round(scrollLeft / (itemWidth + gap - 24));
-    const newActiveStep = Math.max(0, Math.min(currentIndex, stepsData.length - 1));
+    const container = stepsContainerRef.current;
+    const isMobile = window.innerWidth < 768;
     
-    if (newActiveStep !== activeStep) {
-      setActiveStep(newActiveStep);
+    if (!isMobile) {
+      // Тільки для десктопу
+      const scrollLeft = container.scrollLeft;
+      const DESKTOP_ITEM_WIDTH = 520;
+      const DESKTOP_GAP = 32;
+      const currentIndex = Math.round(scrollLeft / (DESKTOP_ITEM_WIDTH + DESKTOP_GAP));
+      const newActiveStep = Math.max(0, Math.min(currentIndex, stepsData.length - 1));
+      
+      if (newActiveStep !== activeStep) {
+        setActiveStep(newActiveStep);
+      }
     }
-  }
-};
+  };
 
   const scrollToStep = (index) => {
     setActiveStep(index);
@@ -83,20 +109,16 @@ const Unique = () => {
       const container = stepsContainerRef.current;
       const isMobile = window.innerWidth < 768;
       
-      const DESKTOP_ITEM_WIDTH = 520;
-      const DESKTOP_GAP = 32;
-      const MOBILE_ITEM_WIDTH = window.innerWidth - 48;
-      const MOBILE_GAP = 32;
-      
-      const itemWidth = isMobile ? MOBILE_ITEM_WIDTH : DESKTOP_ITEM_WIDTH;
-      const gap = isMobile ? MOBILE_GAP : DESKTOP_GAP;
-      
-      const scrollPosition = index * (itemWidth + gap - 24);
-      
-      container.scrollTo({
-        left: scrollPosition,
-        behavior: 'smooth'
-      });
+      if (!isMobile) {
+        const DESKTOP_ITEM_WIDTH = 520;
+        const DESKTOP_GAP = 32;
+        const scrollPosition = index * (DESKTOP_ITEM_WIDTH + DESKTOP_GAP);
+        
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
@@ -123,24 +145,32 @@ const Unique = () => {
           </div>
         </div>
 
-        <div ref={stepsContainerRef}
-             onScroll={handleScroll}
-             className="unique__steps flex gap-8 mt-[48px] overflow-x-auto scroll-smooth
-                     max-md:-mx-6 max-md:px-6">
+        <div 
+          ref={stepsContainerRef}
+          onScroll={handleScroll}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          className="unique__steps flex gap-8 mt-[48px] overflow-x-auto scroll-smooth
+                     max-md:-mx-6 max-md:px-6 max-md:overflow-hidden"
+        >
           {stepsData.map((step, index) => (
-            <div key={step.id}
-                 className={`unique__step unique-step ${step.className} 
-                              flex flex-col items-left 
-                              h-[300px] w-[520px] min-w-[520px] px-10 py-6
-                              max-md:h-[214px] max-md:w-[calc(100vw-48px)] max-md:min-w-[calc(100vw-48px)]
-                              max-md:px-8 mx-auto
-                              ${index === activeStep ? '' : 'max-md:hidden'}`}>
+            <div 
+              key={step.id}
+              className={`unique__step unique-step ${step.className} 
+                          flex flex-col items-left 
+                          h-[300px] w-[520px] min-w-[520px] px-10 py-6
+                          max-md:h-[214px] max-md:w-[calc(100vw-48px)] max-md:min-w-[calc(100vw-48px)]
+                          max-md:px-8 mx-auto
+                          transition-opacity duration-300
+                          ${index === activeStep ? '' : 'max-md:hidden'}`}
+            >
               {step.label && (
                 <div className="unique-step__label flex items-center w-fit gap-2">
                   <img className="w-[16px] h-[16px]" src={step.icon} alt="icon" />
                   {step.label}
                 </div>
-)}
+              )}
               <div className="flex mt-auto gap-6 max-md:gap-4">
                 <div className="unique-step__image-container mt-[12px] max-md:mt-0">
                   <img className="unique-step__image" src={step.icon} alt="icon" />
@@ -158,15 +188,18 @@ const Unique = () => {
           ))}
         </div>
 
+        {/* Індикатори */}
         <div className="flex justify-center gap-2 mt-8 max-md:gap-1 max-md:mt-6">
           {stepsData.map((step, index) => (
-            <button key={step.id} 
-                    onClick={() => scrollToStep(index)}
-                    className={`w-6 h-6 max-md:w-4 max-md:h-4 rounded-full transition-all border-2 ${
-                      activeStep === index 
-                        ? 'bg-[#8753FF] border-[#8753FF]' 
-                        : 'bg-transparent border-[#EEDAFF]'
-                    }`}/>
+            <button 
+              key={step.id} 
+              onClick={() => scrollToStep(index)}
+              className={`w-6 h-6 max-md:w-4 max-md:h-4 rounded-full transition-all border-2 ${
+                activeStep === index 
+                  ? 'bg-[#8753FF] border-[#8753FF]' 
+                  : 'bg-transparent border-[#EEDAFF]'
+              }`}
+            />
           ))}
         </div>
       </div>
