@@ -8,6 +8,7 @@ import userWhite from '../assets/images/icons/user-white.svg';
 const Unique = () => {
   const [activeStep, setActiveStep] = useState(0);
   const stepsContainerRef = useRef(null);
+  const stepRefs = useRef([]);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
@@ -63,17 +64,15 @@ const Unique = () => {
     const isMobile = window.innerWidth < 768;
     if (!isMobile) return;
 
-    const swipeThreshold = 50; // Мінімальна відстань свайпу в px
+    const swipeThreshold = 50;
     const diff = touchStartX.current - touchEndX.current;
 
     if (Math.abs(diff) > swipeThreshold) {
       if (diff > 0) {
-        // Свайп вліво - наступна картка
         if (activeStep < stepsData.length - 1) {
           setActiveStep(activeStep + 1);
         }
       } else {
-        // Свайп вправо - попередня картка
         if (activeStep > 0) {
           setActiveStep(activeStep - 1);
         }
@@ -89,15 +88,46 @@ const Unique = () => {
     const isMobile = window.innerWidth < 768;
     
     if (!isMobile) {
-      // Тільки для десктопу
       const scrollLeft = container.scrollLeft;
-      const DESKTOP_ITEM_WIDTH = 520;
-      const DESKTOP_GAP = 32;
-      const currentIndex = Math.round(scrollLeft / (DESKTOP_ITEM_WIDTH + DESKTOP_GAP));
-      const newActiveStep = Math.max(0, Math.min(currentIndex, stepsData.length - 1));
+      const scrollWidth = container.scrollWidth;
+      const clientWidth = container.clientWidth;
       
-      if (newActiveStep !== activeStep) {
-        setActiveStep(newActiveStep);
+      // Перевірка: якщо доскролили до кінця - активуємо останній елемент
+      if (scrollLeft + clientWidth >= scrollWidth - 10) {
+        if (activeStep !== stepsData.length - 1) {
+          setActiveStep(stepsData.length - 1);
+        }
+        return;
+      }
+      
+      // Перевірка: якщо на початку - активуємо перший елемент
+      if (scrollLeft <= 10) {
+        if (activeStep !== 0) {
+          setActiveStep(0);
+        }
+        return;
+      }
+      
+      // Для всіх інших випадків знаходимо найближчий елемент до центру
+      const containerCenter = scrollLeft + clientWidth / 2;
+      
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+      
+      stepRefs.current.forEach((stepEl, index) => {
+        if (stepEl) {
+          const elementCenter = stepEl.offsetLeft + stepEl.offsetWidth / 2;
+          const distance = Math.abs(containerCenter - elementCenter);
+          
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+          }
+        }
+      });
+      
+      if (closestIndex !== activeStep) {
+        setActiveStep(closestIndex);
       }
     }
   };
@@ -157,6 +187,7 @@ const Unique = () => {
           {stepsData.map((step, index) => (
             <div 
               key={step.id}
+              ref={(el) => (stepRefs.current[index] = el)}
               className={`unique__step unique-step ${step.className} 
                           flex flex-col items-left 
                           h-[300px] w-[520px] min-w-[520px] px-10 py-6
