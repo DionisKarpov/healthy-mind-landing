@@ -67,15 +67,19 @@ const Important = () => {
           </span>
         </div>
 
-        <div className="important__items grid grid-cols-3 max-md:grid-cols-1 mt-10 mb-25 max-md:mb-8"
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}>
+        <div 
+          className="important__items grid grid-cols-3 max-md:grid-cols-1 mt-10 mb-25 max-md:mb-8"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {items.map((item, index) => (
-            <div key={item.id} 
-                  className={`important-item flex max-md:w-[calc(100vw-40px)] 
-                              transition-opacity duration-300
-                              ${index === activeSlide ? 'max-md:flex' : 'max-md:hidden'}`}>
+            <div 
+              key={item.id} 
+              className={`important-item flex max-md:w-[calc(100vw-40px)] 
+                          transition-opacity duration-300
+                          ${index === activeSlide ? 'max-md:flex' : 'max-md:hidden'}`}
+            >
               <div className="important-item__image-container">
                 <img className="important-item__image w-12 h-12" src={brainWhite} alt="Brain icon" />
               </div>
@@ -91,14 +95,16 @@ const Important = () => {
 
         <div className="hidden max-md:flex justify-center gap-2 mb-15">
           {items.map((item, index) => (
-            <button key={item.id}
-                    onClick={() => setActiveSlide(index)}
-                    className={`h-4 w-4 rounded-full transition-all duration-300 cursor-pointer ${
-                      activeSlide === index 
-                        ? 'bg-[#F9709A]' 
-                        : 'bg-[#FFE1D4]'
-                    }`}
-                    aria-label={`Перейти до слайду ${index + 1}`}/>
+            <button
+              key={item.id}
+              onClick={() => setActiveSlide(index)}
+              className={`h-4 w-4 rounded-full transition-all duration-300 cursor-pointer ${
+                activeSlide === index 
+                  ? 'bg-[#F9709A]' 
+                  : 'bg-[#FFE1D4]'
+              }`}
+              aria-label={`Перейти до слайду ${index + 1}`}
+            />
           ))}
         </div>
         
