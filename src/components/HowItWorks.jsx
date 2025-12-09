@@ -42,7 +42,7 @@ const HowItWorks = () => {
               <h3 className="step__title step__title--first w-[240px] mt-6 
                              text-[22px] font-semibold leading-[125%] letter-spacing-[-0.66px]
                              max-md:mt-4">
-                Відповідаєте на низку простих питань.
+                Відповідаєте на низку простих питань
               </h3>
               <p className="step__description mt-4 max-md:mt-1">
                 Ніхто не оцінює і не перевіряє. Це простір, де можна бути щирим із собою й побачити, що відбувається всередині, без страху почути “не те”.
@@ -56,10 +56,10 @@ const HowItWorks = () => {
               <h3 className="step__title step__title--second w-[240px] mt-6 
                              text-[22px] font-semibold leading-[125%] letter-spacing-[-0.66px]
                              max-md:mt-4">
-                Отримуєш картину стану
+                Отримуєте результати
                 </h3>
               <p className="step__description mt-4 max-md:mt-1">
-                Система допоможе побачити цілісну картину твого стану: як ти почуваєшся, мислиш, дієш і взаємодієш. І пояснить усе людяно й просто.
+                Система допоможе побачити цілісну картину вашого стану: як ви почуваєтесь, мислите, дієте і взаємодієте. І пояснить усе людяно й просто.
               </p>
             </div>
             <div className="how-it-works__step step flex flex-col items-left min-w-[270px]">
@@ -70,7 +70,7 @@ const HowItWorks = () => {
               <h3 className="step__title step__title--third  w-[240px] mt-6 
                              text-[22px] font-semibold leading-[125%] letter-spacing-[-0.66px]
                              max-md:mt-4">
-                Дізнаєшся, як собі допомогти
+                Дізнаєтесь, як собі допомогти
               </h3>
               <p className="step__description mt-4 max-md:mt-1">
                 Прості рекомендації, які допомагають покращити свій стан або зберегти те, що вже добре. Без зайвих зусиль — лише намір дбати про себе.

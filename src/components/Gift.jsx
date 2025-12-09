@@ -2,6 +2,7 @@ import heartRed from '../assets/images/icons/heart-red.svg';
 import heartWhite from '../assets/images/icons/heart-white.svg';
 import arrowIcon from '../assets/images/icons/arrow.svg';
 import grandDadImage from '../assets/images/grand-dad.webp';
+import { openMainLink } from '../utils/navigation';
 
 const Gift = () => {
   return (
@@ -29,7 +30,8 @@ const Gift = () => {
               Подаруй чекап тому, хто зараз потребує підтримки.<br />
               Іноді цього достатньо, щоб зробити день легшим.
             </p>
-            <button className="button button--gradient-red w-[334px] mt-12 max-md:w-full max-md:mt-10">
+            <button className="button button--gradient-red w-[334px] mt-12 max-md:w-full max-md:mt-10"
+                    onClick={() => openMainLink()}>
               <img className="w-[16px] h-[16px]" src={heartWhite} alt="Arrow icon" />
               Подарувати чекап
               <img className="w-[16px] h-[16px]" src={arrowIcon} alt="Arrow icon" />

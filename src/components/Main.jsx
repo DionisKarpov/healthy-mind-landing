@@ -3,6 +3,7 @@ import mainImage from '../assets/images/main-image.webp';
 import analyticsDarkPurple from '../assets/images/icons/analytics-dark-purple.svg';
 import shieldGreen from '../assets/images/icons/shield-green.svg';
 import clockPurple from '../assets/images/icons/clock-purple.svg';
+import { openMainLink } from '../utils/navigation';
 
 const Main = () => {
   return (
@@ -22,19 +23,19 @@ const Main = () => {
                           max-lg:text-[48px] max-lg:leading-[48px]
                           max-md:text-center
                           max-sm:text-[24px] max-sm:leading-[30px]">
-              8 хвилин чесності з собою.
+              8 хвилин чесності з собою
               </h1>
             <h1 className="main__title main__title--gradient mb-[24px] 
                           text-[64px] leading-[80px] 
                           max-lg:text-[48px] max-lg:leading-[48px]
                           max-md:text-center
                           max-sm:text-[24px] max-sm:leading-[30px]">
-              Пауза яку ти заслужив.
+              Пауза, яку ви давно заслужили
             </h1>
             <p className="text-[18px] leading-[150%] mb-[42px] text-[var(--dark-blue)] max-sm:hidden">
               Healthy Mind — чекап психологічного стану, створений, щоб допомогти зрозуміти, що відбувається всередині. Без моралізаторства. Без шаблонів. Чесно й по-людськи, з науковою основою.
             </p>
-            <button className="button button--gradient-vertical w-[244px] max-md:w-full">
+            <button className="button button--gradient-vertical w-[244px] max-md:w-full" onClick={() => openMainLink()}>
               Пройти чекап
               <img className="w-[16px] h-[16px]" src={miniArrow} alt="Arrow icon" />
             </button>

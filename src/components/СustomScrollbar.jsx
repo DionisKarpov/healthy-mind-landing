@@ -42,7 +42,6 @@ const CustomScrollbar = ({ scrollRef }) => {
     };
   }, [scrollRef]);
 
-  // Початок перетягування
   const handleMouseDown = (e) => {
     setIsDragging(true);
     dragStartPos.current = e.clientX;

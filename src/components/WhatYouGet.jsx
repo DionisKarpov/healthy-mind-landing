@@ -4,6 +4,7 @@ import arrowGrowWhite from '../assets/images/icons/arrow-grow-white.svg';
 import arrow from '../assets/images/icons/arrow.svg';
 import { useRef } from 'react';
 import CustomScrollbar from './СustomScrollbar.jsx';
+import { openMainLink } from '../utils/navigation.js';
 
 const WhatYouGet = () => {
   const scrollRef = useRef(null);
@@ -17,7 +18,7 @@ const WhatYouGet = () => {
                          text-[44px] leading-[56px] font-medium
                          max-md:text-[36px] max-md:leading-[125%]
                          max-md:font-semibold">
-            Що ти отримаєш
+            Що ви отримаєте
           </h2>
         </div>
         <div className="w-full 
@@ -30,11 +31,11 @@ const WhatYouGet = () => {
               <div className="card__image-container card__image-container--first">
                 <img className="card__image" src={brainWhite} alt="how it works icon" />
               </div>
-              <h3 className="card__title card__title--first">Чітку картину свого стану</h3>
+              <h3 className="card__title card__title--first">Об'єктивну оцінку свого стану</h3>
               <p className="card__description">
-                Замість гадати "чи зі мною все гаразд?"
+                Замість гадати "чи зі мною все гаразд?".
               </p>
-              <div className="card__decoration card__decoration--first"></div>
+              {/* <div className="card__decoration card__decoration--first"></div> */}
             </div>
             <div className="what-you-get__card card flex flex-col items-left w-[332px] min-w-[332px] max-md:w-[310px] max-md:min-w-[310px]">
               <div className="card__image-container card__image-container--second">
@@ -42,9 +43,9 @@ const WhatYouGet = () => {
               </div>
               <h3 className="card__title card__title--second">Зрозумілі пояснення</h3>
               <p className="card__description">
-                Отримуєш пояснення без складних фраз, щоб легше зрозуміти свій стан і реакції.
+                Отримуєте пояснення без складних фраз, щоб легше зрозуміти свій стан і реакції.
               </p>
-              <div className="card__decoration card__decoration--second"></div>
+              {/* <div className="card__decoration card__decoration--second"></div> */}
             </div>
             <div className="what-you-get__card card flex flex-col items-left w-[332px] min-w-[332px] max-md:w-[310px] max-md:min-w-[310px]">
               <div className="card__image-container card__image-container--third">
@@ -52,9 +53,9 @@ const WhatYouGet = () => {
               </div>
               <h3 className="card__title card__title--third">Розуміння своїх ресурсів</h3>
               <p className="card__description">
-                Отримуєш пояснення без складних фраз, щоб легше зрозуміти свій стан і реакції.
+                Бачите, що саме вам допомагає, і як продовжувати рух у правильному напрямку, самостійно чи з підтримкою фахівця.
               </p>
-              <div className="card__decoration card__decoration--third"></div>
+              {/* <div className="card__decoration card__decoration--third"></div> */}
             </div>
             <div className="what-you-get__card card flex flex-col items-left w-[332px] min-w-[332px] max-md:w-[310px] max-md:min-w-[310px] mr-5">
               <div className="card__image-container card__image-container--fourth">
@@ -62,21 +63,22 @@ const WhatYouGet = () => {
               </div>
               <h3 className="card__title card__title--fourth">Можливість відстеження змін з часом</h3>
               <p className="card__description">
-                Отримуєш пояснення без складних фраз, щоб легше зрозуміти свій стан і реакції.
+                Без обмежень відстежуєте зміни у своєму стані та бачите, як зростає ваша рівновага й стійкість у різних сферах життя.
               </p>
-              <div className="card__decoration card__decoration--fourth"></div>
+              {/* <div className="card__decoration card__decoration--fourth"></div> */}
             </div>
           </div>
         </div>
         <CustomScrollbar scrollRef={scrollRef} />
 
-        <div className="what-you-get__description w-[520px] mt-[60px] max-md:w-full max-md:px-5">
-          Healthy Mind аналізує понад 50 показників, щоб дати тобі не просто цифри — а відчуття стійкості
+        <div className="what-you-get__description w-[700px] mt-[60px] max-md:w-full max-md:px-5">
+          Чекап і загальну оцінку вашого стану ви отримуєте безкоштовно. Лише за <span className="font-semibold">99 гривень</span> ви відкриваєте повні результати, детальні пояснення та персональні поради для відновлення балансу.
         </div>
         
         <button className="button button--gradient-inclined 
                            w-[280px] mt-[24px] 
-                           max-md:w-[290px]">
+                           max-md:w-[290px]"
+                onClick={() => openMainLink()}>
           Пройти чекап
           <img className="w-[16px] h-[16px]" src={arrow} alt="Arrow icon" />
         </button>

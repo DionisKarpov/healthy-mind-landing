@@ -4,6 +4,8 @@ import layersWhite from '../assets/images/icons/layers-white.svg';
 import lockWhite from '../assets/images/icons/lock-white.svg';
 import flashWhite from '../assets/images/icons/flash-white.svg';
 import userWhite from '../assets/images/icons/user-white.svg';
+import arrow from '../assets/images/icons/arrow.svg';
+import { openMainLink } from '../utils/navigation';
 
 const Unique = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -24,8 +26,8 @@ const Unique = () => {
     {
       id: 1,
       icon: layersWhite,
-      title: 'Система оцінює найпоширеніші психологічні стани:',
-      description: 'тривогу, депресію, стрес, наслідки травми та інші (за міжнародними стандартами DSM-5 і МКХ-11)',
+      title: 'Комплексно',
+      description: 'Система комплексно показує сигнали ключових психологічних проблем.',
       className: 'unique-step--second'
     },
     {
@@ -39,7 +41,7 @@ const Unique = () => {
       id: 3,
       icon: flashWhite,
       title: 'Швидко',
-      description: '8 хвилин замість 3-4 години класично зі спеціалістом.',
+      description: 'В середньому 8 хвилин замість 3-4 години класично зі спеціалістом.',
       className: 'unique-step--fourth'
     },
     {
@@ -51,7 +53,6 @@ const Unique = () => {
     }
   ];
 
-  // Touch handlers для свайпу на мобільному
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -80,7 +81,6 @@ const Unique = () => {
     }
   };
 
-  // Відслідковування скролу для десктопу
   const handleScroll = () => {
     if (!stepsContainerRef.current) return;
     
@@ -92,7 +92,6 @@ const Unique = () => {
       const scrollWidth = container.scrollWidth;
       const clientWidth = container.clientWidth;
       
-      // Перевірка: якщо доскролили до кінця - активуємо останній елемент
       if (scrollLeft + clientWidth >= scrollWidth - 10) {
         if (activeStep !== stepsData.length - 1) {
           setActiveStep(stepsData.length - 1);
@@ -100,7 +99,6 @@ const Unique = () => {
         return;
       }
       
-      // Перевірка: якщо на початку - активуємо перший елемент
       if (scrollLeft <= 10) {
         if (activeStep !== 0) {
           setActiveStep(0);
@@ -108,7 +106,6 @@ const Unique = () => {
         return;
       }
       
-      // Для всіх інших випадків знаходимо найближчий елемент до центру
       const containerCenter = scrollLeft + clientWidth / 2;
       
       let closestIndex = 0;
@@ -171,31 +168,27 @@ const Unique = () => {
           </h2>
           <div className="unique__description w-[580px] text-center text-[18px] leading-[150%]  
                             max-md:text-[14px] max-md:w-full">
-            Ми поєднали розуміння життя українців, наукову точність й простоту, щоб рекомендації природно ставали частиною щоденності та покращували самопочуття
+            Ми поєднали науку, турботу й реальний контекст життя українців, щоб психологічний стан став природною частиною турботи про себе.
           </div>
         </div>
 
-        <div 
-          ref={stepsContainerRef}
-          onScroll={handleScroll}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          className="unique__steps flex gap-8 mt-[48px] overflow-x-auto scroll-smooth
-                     max-md:-mx-6 max-md:px-6 max-md:overflow-hidden"
-        >
+        <div  ref={stepsContainerRef}
+              onScroll={handleScroll}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              className="unique__steps flex gap-8 mt-[48px] overflow-x-auto scroll-smooth
+                     max-md:-mx-6 max-md:px-6 max-md:overflow-hidden">
           {stepsData.map((step, index) => (
-            <div 
-              key={step.id}
-              ref={(el) => (stepRefs.current[index] = el)}
-              className={`unique__step unique-step ${step.className} 
+            <div key={step.id}
+                ref={(el) => (stepRefs.current[index] = el)}
+                className={`unique__step unique-step ${step.className} 
                           flex flex-col items-left 
                           h-[300px] w-[520px] min-w-[520px] px-10 py-6
                           max-md:h-[214px] max-md:w-[calc(100vw-48px)] max-md:min-w-[calc(100vw-48px)]
                           max-md:px-8 mx-auto
                           transition-opacity duration-300
-                          ${index === activeStep ? '' : 'max-md:hidden'}`}
-            >
+                          ${index === activeStep ? '' : 'max-md:hidden'}`}>
               {step.label && (
                 <div className="unique-step__label flex items-center w-fit gap-2">
                   <img className="w-[16px] h-[16px]" src={step.icon} alt="icon" />
@@ -219,7 +212,6 @@ const Unique = () => {
           ))}
         </div>
 
-        {/* Індикатори */}
         <div className="flex justify-center gap-2 mt-8 max-md:gap-1 max-md:mt-6">
           {stepsData.map((step, index) => (
             <button 
@@ -233,6 +225,14 @@ const Unique = () => {
             />
           ))}
         </div>
+
+        <button className="button button--gradient-inclined 
+                           w-[280px] mt-[48px] 
+                           max-md:w-[290px]"
+                onClick={() => openMainLink()}>
+          Перевірити свій стан
+          <img className="w-[16px] h-[16px]" src={arrow} alt="Arrow icon" />
+        </button>
       </div>
     </section>
   );

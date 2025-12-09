@@ -1,19 +1,17 @@
-import forbesLogo from '../assets/images/partners/forbes-logo.svg';
-import ainLogo from '../assets/images/partners/ain-logo.svg';
-import bazilikLogo from '../assets/images/partners/bazilik-logo.svg';
-import partnerLogo from '../assets/images/partners/partner-logo.svg';
-import spekaLogo from '../assets/images/partners/speka-logo.svg';
-import vectorLogo from '../assets/images/partners/vector-logo.svg';
 import heartRed from '../assets/images/icons/heart-red.svg';
+import fondMasha from '../assets/images/partners/fund-masha.png';
+import azovHeart from '../assets/images/partners/azovstal-heart.png';
+import olenaPinchukFund from '../assets/images/partners/olena-pinchuk-fund.png';
+import doladu from '../assets/images/partners/doladu.png';
+import oneHundredLife from '../assets/images/partners/100-life.jpg';
 
 const Trust = () => {
   const logos = [
-    { id: 1, src: forbesLogo, alt: 'Forbes' },
-    { id: 2, src: ainLogo, alt: 'Ain' },
-    { id: 3, src: bazilikLogo, alt: 'Bazilik' },
-    { id: 4, src: partnerLogo, alt: 'Partner' },
-    { id: 5, src: spekaLogo, alt: 'Speka' },
-    { id: 6, src: vectorLogo, alt: 'Vector' },
+    { id: 1, src: fondMasha, alt: 'Фонд Маша', width: 105, height: 72 },
+    { id: 2, src: azovHeart, alt: 'Серце Азовсталі', width: 78, height: 90  },
+    { id: 3, src: olenaPinchukFund, alt: 'Фонд Олени Пінчук', width: 76, height: 97  },
+    { id: 4, src: doladu, alt: 'Partner', width: 201, height: 60  },
+    { id: 5, src: oneHundredLife, alt: '100% Life', width: 145, height: 54  },
   ];
   return (
     <section className="trust bg-[#FFF9F3]">
@@ -33,20 +31,34 @@ const Trust = () => {
         </h2>
         <p className="trust__description text-[18px] leading-[28px] mt-4 
                       max-md:text-[16px] max-md:leading-[24px] ">
-          Підтримуємо і тих, хто звертається по допомогу, і тих, хто щодня її надає.<br />
+          Підтримуємо і тих, хто звертається про допомогу, і тих, хто щодня її надає.<br />
           Разом із фондами допомагаємо відновлювати сили та баланс.
         </p>
         <p className="trust__description my-6 max-md:my-3">
           Нам довіряють:
         </p>
-        <div className="trust__logo-slider h-[66px] max-md:h-8">
-          <div className="logo-slider my-3 max-md:my-2">
-            <div className="logo-slider__track gap-10 max-md:gap-5">
+        <div className="trust__logo-slider h-[120px] max-md:h-14">
+          <div className="logo-slider mt-6 mb-8 max-md:my-4">
+            <div className="logo-slider__track gap-12 max-md:gap-5">
               {logos.map(logo => (
-                <img className="h-[42px] max-md:h-[16px]" key={logo.id} src={logo.src} alt={logo.alt} />
+                <img style={{ height: logo.height, width: logo.width }}
+                     className="max-md:!h-12 max-md:!w-auto" 
+                     key={logo.id} src={logo.src} alt={logo.alt} />
               ))}
               {logos.map(logo => (
-                <img className="h-[42px] max-md:h-[16px]" key={`${logo.id}-duplicate`} src={logo.src} alt={logo.alt} />
+                <img style={{ height: logo.height, width: logo.width }}
+                     className="max-md:!h-12 max-md:!w-auto" 
+                     key={logo.id} src={logo.src} alt={logo.alt} />
+              ))}
+              {logos.map(logo => (
+                <img style={{ height: logo.height, width: logo.width }}
+                     className="max-md:!h-12 max-md:!w-auto" 
+                     key={logo.id} src={logo.src} alt={logo.alt} />
+              ))}
+              {logos.map(logo => (
+                <img style={{ height: logo.height, width: logo.width }}
+                     className="max-md:!h-12 max-md:!w-auto" 
+                     key={logo.id} src={logo.src} alt={logo.alt} />
               ))}
             </div>
           </div>
