@@ -32,15 +32,17 @@ const Main = () => {
                           max-sm:text-[24px] max-sm:leading-[30px]">
               Пауза, яку ви давно заслужили
             </h1>
-            <p className="text-[18px] leading-[150%] mb-[42px] text-[var(--dark-blue)] max-sm:hidden">
+            <div className="flex flex-col gap-8 mb-8 max-md:flex-col-reverse max-md:gap-6 max-md:mb-10">
+              <p className="text-[18px] leading-[150%] text-[var(--dark-blue)] max-md:text-[14px]">
               Healthy Mind — чекап психологічного стану, створений, щоб допомогти зрозуміти, що відбувається всередині. Без моралізаторства. Без шаблонів. Чесно й по-людськи, з науковою основою.
-            </p>
-            <button className="button button--gradient-vertical w-[244px] max-md:w-full" onClick={() => openMainLink()}>
-              Пройти чекап
-              <img className="w-[16px] h-[16px]" src={miniArrow} alt="Arrow icon" />
-            </button>
+              </p>
+              <button className="button button--gradient-vertical w-[244px] max-md:w-full" onClick={() => openMainLink()}>
+                Пройти чекап
+                <img className="w-[16px] h-[16px]" src={miniArrow} alt="Arrow icon" />
+              </button>
+            </div>
           </div>
-          <div className="flex gap-4 mt-[32px] max-md:flex-col">
+          <div className="flex gap-4 max-md:flex-col">
             <div className="main__info max-md:w-full">
               <img className="w-[20px] h-[20px]" src={analyticsDarkPurple} alt="analytics icon" />
               50+ показників

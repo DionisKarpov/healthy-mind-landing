@@ -39,7 +39,7 @@ const HowItWorks = () => {
                 <img className="step__image w-[40px] h-[40px] max-md:w-[30px] max-md:h-[30px]" 
                      src={dialogWhite} alt="how it works icon" />
               </div>
-              <h3 className="step__title step__title--first w-[240px] mt-6 
+              <h3 className="step__title step__title--first w-[240px] mt-6 h-[56px]
                              text-[22px] font-semibold leading-[125%] letter-spacing-[-0.66px]
                              max-md:mt-4">
                 Відповідаєте на низку простих питань
@@ -53,7 +53,7 @@ const HowItWorks = () => {
                 <img className="step__image w-[40px] h-[40px] max-md:w-[30px] max-md:h-[30px]" 
                 src={analyticsWhite} alt="how it works icon" />
               </div>
-              <h3 className="step__title step__title--second w-[240px] mt-6 
+              <h3 className="step__title step__title--second w-[240px] mt-6 h-[56px]
                              text-[22px] font-semibold leading-[125%] letter-spacing-[-0.66px]
                              max-md:mt-4">
                 Отримуєте результати
@@ -67,7 +67,7 @@ const HowItWorks = () => {
                 <img className="step__image w-[40px] h-[40px] max-md:w-[30px] max-md:h-[30px]" 
                      src={bulbWhite} alt="how it works icon" />
               </div>
-              <h3 className="step__title step__title--third  w-[240px] mt-6 
+              <h3 className="step__title step__title--third  w-[240px] mt-6 h-[56px]
                              text-[22px] font-semibold leading-[125%] letter-spacing-[-0.66px]
                              max-md:mt-4">
                 Дізнаєтесь, як собі допомогти
