@@ -10,7 +10,7 @@ const Trust = () => {
     { id: 1, src: fondMasha, alt: 'Фонд Маша', width: 105, height: 72 },
     { id: 2, src: azovHeart, alt: 'Серце Азовсталі', width: 78, height: 90  },
     { id: 3, src: olenaPinchukFund, alt: 'Фонд Олени Пінчук', width: 76, height: 97  },
-    { id: 4, src: doladu, alt: 'Partner', width: 201, height: 60  },
+    { id: 4, src: doladu, alt: 'Partner', width: 201, height: 90  },
     { id: 5, src: oneHundredLife, alt: '100% Life', width: 145, height: 54  },
   ];
   return (

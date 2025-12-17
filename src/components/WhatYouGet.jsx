@@ -78,6 +78,8 @@ const WhatYouGet = () => {
           Пройти чекап зараз
           <img className="w-[16px] h-[16px]" src={arrow} alt="Arrow icon" />
         </button>
+
+        <div className='mt-[12px] text-[14px] text-[#A1A7BA] leading-[125%]'>Пропозиція діє до 01.02.2026.</div>
       </div>
     </section>
   );

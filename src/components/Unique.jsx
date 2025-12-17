@@ -17,7 +17,6 @@ const Unique = () => {
   const stepsData = [
     {
       id: 0,
-      label: 'Головна перевага',
       icon: achiveWhite,
       title: 'Науково точно',
       description: 'Використовуємо всесвітньо визнані методики, адаптовані для українців.',
@@ -184,8 +183,8 @@ const Unique = () => {
                 ref={(el) => (stepRefs.current[index] = el)}
                 className={`unique__step unique-step ${step.className} 
                           flex flex-col items-left 
-                          h-[300px] w-[520px] min-w-[520px] px-10 py-6
-                          max-md:h-[214px] max-md:w-[calc(100vw-48px)] max-md:min-w-[calc(100vw-48px)]
+                          h-[242px] w-[520px] min-w-[520px] p-10
+                          max-md:h-[200px] max-md:w-[calc(100vw-48px)] max-md:min-w-[calc(100vw-48px)]
                           max-md:px-8 mx-auto
                           transition-opacity duration-300
                           ${index === activeStep ? '' : 'max-md:hidden'}`}>
@@ -195,11 +194,11 @@ const Unique = () => {
                   {step.label}
                 </div>
               )}
-              <div className="flex mt-auto gap-6 max-md:gap-4">
-                <div className="unique-step__image-container mt-[12px] max-md:mt-0">
+              <div className="flex mt-6 gap-6 max-md:gap-4">
+                <div className="unique-step__image-container max-md:mt-0">
                   <img className="unique-step__image" src={step.icon} alt="icon" />
                 </div>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 mt-1">
                   <h3 className="unique-step__title text-[22px] max-md:text-[16px]">{step.title}</h3>
                   <p className="unique-step__description text-[16px] leading-[26px] 
                                 max-md:text-[14px] max-md:leading-[20px]">
