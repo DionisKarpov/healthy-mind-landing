@@ -1,17 +1,69 @@
-# React + Vite
+Healthy Mind Landing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a frontend landing page built with React and Vite, using Tailwind CSS for styling.
+The project is optimized for fast development and easy deployment to GitHub Pages.
 
-Currently, two official plugins are available:
+⸻
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Requirements
+	•	Node.js (recommended: latest LTS)
+	•	npm
 
-## React Compiler
+⸻
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Installation
 
-## Expanding the ESLint configuration
+Install all dependencies before running the project:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# healthy-mind-landing
+npm i
+
+
+⸻
+
+Available Scripts
+
+npm run dev
+
+Starts the development server using Vite.
+The app will be available at http://localhost:5173 with hot module replacement enabled.
+
+⸻
+
+npm run build
+
+Builds the application for production.
+The output files will be generated in the dist directory.
+
+⸻
+
+npm run preview
+
+Serves the production build locally for preview and testing.
+
+⸻
+
+npm run lint
+
+Runs ESLint to check the codebase for potential issues and code style problems.
+
+⸻
+
+npm run deploy
+
+Deploys the production build to GitHub Pages.
+This command automatically runs the build process before deployment.
+
+⸻
+
+Tech Stack
+	•	React
+	•	Vite
+	•	Tailwind CSS
+	•	ESLint
+	•	Sass
+
+⸻
+
+Notes
+	•	Make sure to run npm i before any other command.
+	•	The project uses ES modules ("type": "module").
